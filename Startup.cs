@@ -31,9 +31,9 @@ namespace WebApi
         {
             // use sql server db in production and sqlite db in development
             if (_env.IsProduction())
-                services.AddDbContext<DataContext>(x => x.UseSqlServer(_configuration.GetConnectionString("WebApiDatabase")));
+                services.AddDbContext<DataContext>();
             else
-                services.AddDbContext<DataContext>(x => x.UseSqlite("Data Source=LocalDatabase.db"));
+                services.AddDbContext<DataContext, SqliteDataContext>();
 
             services.AddCors();
             services.AddControllers();

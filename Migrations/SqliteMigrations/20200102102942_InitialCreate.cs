@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApi.Migrations
+namespace WebApi.Migrations.SqliteMigrations
 {
     public partial class InitialCreate : Migration
     {
