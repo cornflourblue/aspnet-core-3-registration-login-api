@@ -38,10 +38,10 @@ namespace WebApi.Controllers
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
-            var user = _userService.Authenticate(model.Username, model.Password);
+            var user = _userService.Authenticate(model.Dni, model.Password);
 
             if (user == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
+                return BadRequest(new { message = "Dni o password incorrecta" });
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -61,7 +61,7 @@ namespace WebApi.Controllers
             return Ok(new
             {
                 Id = user.Id,
-                Username = user.Username,
+                Dni = user.Dni,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Token = tokenString
