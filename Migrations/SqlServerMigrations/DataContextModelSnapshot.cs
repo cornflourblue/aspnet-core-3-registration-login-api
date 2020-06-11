@@ -38,7 +38,7 @@ namespace WebApi.Migrations.SqlServerMigrations
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("Dni")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

@@ -34,7 +34,7 @@ namespace WebApi.Migrations.SqliteMigrations
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("BLOB");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("Dni")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
